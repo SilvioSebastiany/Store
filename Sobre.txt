@@ -14,3 +14,11 @@
 Testando, meu nome é Silvio
 
 --------------------------------------
+
+(Tests)
+	Criei dentro da pasta Store a pasta Store.Tests
+	
+	comandos cmd
+		cd .\Store.Tests\
+		dotnet new mstest
+		dotnet add reference ../Store.Domain/Store.Domain.csproj
