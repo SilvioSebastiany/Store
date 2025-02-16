@@ -95,7 +95,9 @@ namespace Store.Tests.Entities
         [TestCategory("Domain")]
         public void Dado_um_desconto_de_10_o_valor_do_pedido_deve_ser_50()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, _discount);
+            order.AddItem(_product, quantity: 3);
+            Assert.AreEqual(50, order.Total());
         }
 
         [TestMethod]
