@@ -49,7 +49,9 @@ namespace Store.Tests.Entities
         [TestCategory("Domain")]
         public void Dado_um_novo_item_sem_produto_o_mesmo_nao_deve_ser_adicionado()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, _discount);
+            order.AddItem(null, 10);
+            Assert.AreEqual(0, order.Items.Count);
         }
 
         [TestMethod]
