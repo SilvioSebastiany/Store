@@ -7,7 +7,7 @@ namespace Store.Tests.Entities
     public class OrderTests
     {
         private readonly Customer _customer = new Customer("Silvio Sebastiany", "silvio.sebastiany@gmail.com");
-        private readonly Product _product = new Product("Produto 1", 10, true);
+        private readonly Product _product = new Product("Produto 1", 20, true);
         private readonly Discount _discount = new Discount(10, 0, DateTime.Now.AddDays(5));
 
         [TestMethod]
@@ -30,7 +30,10 @@ namespace Store.Tests.Entities
         [TestCategory("Domain")]
         public void Dado_um_pagamento_do_pedido_seu_status_deve_ser_aguardando_entrega()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, _discount);
+            order.AddItem(_product, 1); // Total do pedido deve ser 10
+            order.Pay(10);
+            Assert.AreEqual(EOrderStatus.WaitingDelivery, order.Status);
         }
 
         [TestMethod]
