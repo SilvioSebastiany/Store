@@ -67,7 +67,9 @@ namespace Store.Tests.Entities
         [TestCategory("Domain")]
         public void Dado_um_novo_pedido_valido_seu_total_deve_ser_50()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, _discount);
+            order.AddItem(_product, quantity: 3);
+            Assert.AreEqual(50, order.Total());
         }
 
         [TestMethod]
