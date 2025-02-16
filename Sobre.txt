@@ -9,11 +9,7 @@
 
     Criei a pasta Entities dentro da pasta Store.Domain
     Criei o arquivo Customer.cs dentro da pasta Entities
---------------------------------------	
-
-Testando, meu nome é Silvio
-
---------------------------------------
+----------------------------------------
 
 (Tests)
 	Criei dentro da pasta Store a pasta Store.Tests
