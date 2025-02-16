@@ -1,13 +1,19 @@
+using Store.Domain.Entities;
+
 namespace Store.Tests.Entities
 {
     [TestClass]
     public class OrderTests
     {
         [TestMethod]
-        [TestCategory("Domain")] //utilizado no visual studio para agrupar os testes
+        [TestCategory("Domain")] //utilizado no visual studio para agrupar os testes]
         public void Dado_um_novo_pedido_valido_ele_deve_gerar_um_numero_com_8_caracteres()
         {
-            Assert.Fail();
+            var customer = new Customer("Silvio Sebastiany","silvio.sebastiany@gmail.com");
+            var order = new Order(customer, 0, null); 
+
+            // Assert: Verifica o resultado
+            Assert.AreEqual(8, order.Number.Length); 
         }
 
         [TestMethod]
