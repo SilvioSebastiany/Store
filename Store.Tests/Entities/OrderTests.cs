@@ -40,7 +40,9 @@ namespace Store.Tests.Entities
         [TestCategory("Domain")]
         public void Dado_um_pedido_cancelado_seu_status_deve_ser_cancelado()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 0, _discount);
+            order.Cancel();
+            Assert.AreEqual(EOrderStatus.Canceled, order.Status);
         }
 
         [TestMethod]
