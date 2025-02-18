@@ -4,6 +4,6 @@ namespace Store.Domain.Repositories.interfaces
 {
     public interface IDiscountRepository
     {
-        Discount Get(Guid id);
+        Discount Get(string code);
     }
 }
