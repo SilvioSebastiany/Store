@@ -104,14 +104,17 @@ namespace Store.Tests.Entities
         [TestCategory("Domain")]
         public void Dado_uma_taxa_de_entrega_de_10_o_valor_do_pedido_deve_ser_60()
         {
-            Assert.Fail();
+            var order = new Order(_customer, 10, _discount);
+            order.AddItem(_product, quantity: 3);
+            Assert.AreEqual(60, order.Total());
         }
 
         [TestMethod]
         [TestCategory("Domain")]
         public void Dado_um_pedido_sem_cliente_o_mesmo_deve_ser_invalido()
         {
-            Assert.Fail();
+            var order = new Order(null, 10, _discount);
+            Assert.IsFalse(order.IsValid);
         }
     }
 }
