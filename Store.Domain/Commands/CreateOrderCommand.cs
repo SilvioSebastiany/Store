@@ -11,6 +11,7 @@ namespace Store.Domain.Commands
         public string PromoCode { get; set; }
         public CreateOrderCommand()
         {
+            Items = new List<CreateOrderItemCommand>();
         }
 
         public CreateOrderCommand(string customer, string zipCode, string promoCode, IList<CreateOrderItemCommand> items)
