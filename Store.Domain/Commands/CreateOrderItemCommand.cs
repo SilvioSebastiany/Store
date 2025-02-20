@@ -12,6 +12,7 @@ namespace Store.Domain.Commands
 
         public CreateOrderItemCommand()
         {
+            
         }
 
         public CreateOrderItemCommand(Guid productId, int quantity)
