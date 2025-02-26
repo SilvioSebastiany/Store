@@ -1,4 +1,3 @@
-
 using Store.Domain.Commands.Interfaces;
 
 namespace Store.Domain.Handlers.Interfaces

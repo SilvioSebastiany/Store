@@ -1,6 +1,6 @@
-using System.Windows.Input;
 using Flunt.Notifications;
 using Flunt.Validations;
+using Store.Domain.Commands.Interfaces;
 
 namespace Store.Domain.Commands
 {
